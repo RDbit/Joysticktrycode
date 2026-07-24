@@ -1,0 +1,55 @@
+body{
+
+    font-family:Arial;
+
+    text-align:center;
+
+    background:#202124;
+
+    color:white;
+
+}
+
+button{
+
+    padding:12px 20px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+#box{
+
+    width:500px;
+
+    height:500px;
+
+    margin:auto;
+
+    border:3px solid white;
+
+    position:relative;
+
+    background:#333;
+
+}
+
+#dot{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    background:red;
+
+    position:absolute;
+
+    left:235px;
+
+    top:235px;
+
+}

@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>    
-    <title>Joystick Checker HEHE</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arduino Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
-</html>
+
 <body>
 
-    <h1>Joystick Dashboard</h1>
+<h1>Arduino Joystick Dashboard</h1>
 
-    <button id="checkJoystickBtn">Check Joystick</button>
-    
+<button id="connect">
+Connect Arduino
+</button>
+
+<h2>
+
+X :
+<span id="x">0</span>
+
+</h2>
+
+<h2>
+
+Y :
+<span id="y">0</span>
+
+</h2>
+
+<h2>
+
+Switch :
+<span id="buttonState">Released</span>
+
+</h2>
+
+<div id="box">
+
+<div id="dot"></div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
+</html>

@@ -1,55 +1,28 @@
-body{
-
-    font-family:Arial;
-
-    text-align:center;
-
-    background:#202124;
-
-    color:white;
-
-}
-
-button{
-
-    padding:12px 20px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-}
-
-#box{
-
-    width:500px;
-
-    height:500px;
-
-    margin:auto;
-
-    border:3px solid white;
-
-    position:relative;
-
-    background:#333;
-
-}
-
-#dot{
-
-    width:30px;
-
-    height:30px;
-
-    border-radius:50%;
-
-    background:red;
-
-    position:absolute;
-
-    left:235px;
-
-    top:235px;
-
-}
+:root { color-scheme: dark; font-family: "Segoe UI", Arial, sans-serif; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; color: #e9fff7; background: #07120f; background-image: radial-gradient(circle at 50% -20%, #145840 0, transparent 42%); }
+.dashboard { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 44px 0 52px; }
+.topbar { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-bottom: 28px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 7px; color: #76a89a; font-family: Consolas, monospace; font-size: .75rem; letter-spacing: .14em; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #3f6459; box-shadow: 0 0 0 3px #17342b; transition: .2s ease; }
+.status-dot.connected { background: #44f59d; box-shadow: 0 0 12px #44f59d; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -.05em; }
+button { border: 1px solid #37d886; border-radius: 8px; padding: 12px 18px; color: #062216; background: #55ef9f; box-shadow: 0 5px 24px #22b96a40; font: 700 .9rem/1 "Segoe UI", sans-serif; cursor: pointer; transition: transform .15s, background .15s; }
+button:hover { transform: translateY(-2px); background: #8affbd; }
+button:disabled { cursor: wait; opacity: .7; transform: none; }
+.readouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+.readout, .matrix-panel { border: 1px solid #225745; background: #0a1c17cc; box-shadow: inset 0 1px #ffffff09; }
+.readout { min-height: 100px; padding: 16px 18px; border-radius: 10px; }
+.readout span, .matrix-heading, .hint { color: #85ad9f; font-family: Consolas, monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.readout strong { display: block; margin-top: 9px; color: #a5ffd0; font-family: Consolas, monospace; font-size: clamp(1.35rem, 3vw, 2rem); letter-spacing: -.06em; }
+.switch-readout strong { font-family: "Segoe UI", sans-serif; font-size: 1.35rem; letter-spacing: -.03em; }
+.switch-readout strong.pressed { color: #ffda6b; text-shadow: 0 0 16px #ffbe3d80; }
+.matrix-panel { padding: 20px; border-radius: 12px; }
+.matrix-heading { display: flex; justify-content: space-between; margin-bottom: 17px; }
+#box { --grid: #2a6b5580; position: relative; width: min(100%, 620px); aspect-ratio: 1; margin: auto; overflow: hidden; border: 1px solid #358666; border-radius: 7px; background-color: #0a2119; background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px), radial-gradient(circle, #123c2c, #081a14 70%); background-size: 10% 10%, 10% 10%, 100% 100%; box-shadow: inset 0 0 70px #000b08; }
+.axis { position: absolute; background: #74cf9e55; pointer-events: none; }
+.axis-x { top: 50%; left: 0; width: 100%; height: 1px; }
+.axis-y { top: 0; left: 50%; width: 1px; height: 100%; }
+#dot { position: absolute; top: 50%; left: 50%; width: clamp(18px, 4vw, 28px); aspect-ratio: 1; border: 2px solid #e6fff1; border-radius: 50%; background: #49f99d; box-shadow: 0 0 0 6px #49f99d25, 0 0 25px #49f99d; transform: translate(-50%, -50%); will-change: left, top; }
+.hint { margin: 17px 0 0; text-align: center; letter-spacing: .04em; text-transform: none; }
+@media (max-width: 620px) { .dashboard { padding-top: 28px; } .topbar { align-items: flex-start; flex-direction: column; } .topbar button { width: 100%; } .readouts { grid-template-columns: 1fr 1fr; } .switch-readout { grid-column: span 2; } .matrix-panel { padding: 13px; } }

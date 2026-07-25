@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Arduino Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joystick Matrix</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow"><span class="status-dot" id="statusDot"></span> SERIAL JOYSTICK</p>
+        <h1>Motion Matrix</h1>
+      </div>
+      <button id="connect" type="button">Connect Arduino</button>
+    </header>
 
-<h1>Arduino Joystick Dashboard</h1>
+    <section class="readouts" aria-label="Joystick values">
+      <article class="readout"><span>X axis</span><strong id="x">0000</strong></article>
+      <article class="readout"><span>Y axis</span><strong id="y">0000</strong></article>
+      <article class="readout switch-readout"><span>Switch</span><strong id="buttonState">Released</strong></article>
+    </section>
 
-<button id="connect">
-Connect Arduino
-</button>
-
-<h2>
-
-X :
-<span id="x">0</span>
-
-</h2>
-
-<h2>
-
-Y :
-<span id="y">0</span>
-
-</h2>
-
-<h2>
-
-Switch :
-<span id="buttonState">Released</span>
-
-</h2>
-
-<div id="box">
-
-<div id="dot"></div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <section class="matrix-panel" aria-label="Live joystick position">
+      <div class="matrix-heading"><span>LIVE POSITION</span><span id="coordinates">X 512 · Y 512</span></div>
+      <div id="box" role="img" aria-label="Joystick position matrix">
+        <div class="axis axis-x"></div>
+        <div class="axis axis-y"></div>
+        <div id="dot" aria-hidden="true"></div>
+      </div>
+      <p class="hint">Move the joystick to guide the signal through the grid.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
-
 </html>
